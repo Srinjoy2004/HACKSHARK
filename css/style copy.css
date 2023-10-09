@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+/* // $blue: #29d9d5;
+// $black:#111;
+// $light-color:rgba(14,13,13);
+// $black-bg: rgba(17,17,17,.7);
+// $white:#FFF;
+// $bg-color:#222;
+// $border: .2rem solid $blue; */
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    
+    /* &::-webkit-scrollbar{
+        width: 1rem;
+
+    }
+    &::-webkit-scrollbar-track{
+        background: #111;
+
+    }
+    &::-webkit-scrollbar-thumb{
+        background: #29d9d5;
+
+    } */
+}
+body{
+    background: #111;
+    overflow-x: hidden;
+
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5rem 9%;
+
+    
+}
+.logo{
+    font-size: 20px;
+    color: #fff;
+    font-weight: bolder;
+
+}
+.header .navbar a{
+    font-size: 20px;
+    color: #aaa ;
+    display: inline-block;
+    margin: 0 23px;
+}
+.navbar a:hover{
+    color: #29d9d5;
+}
+
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=search] {
+    width: 160px;
+    padding: 8px 20px 8px 45px;
+    border:#fff solid 2px;
+    font-size: 18px;
+border-radius: 25px;
+background-position: 2% 50%;
+background-repeat: no-repeat;
+background-size: 30px;
+background-image: url('search.svg');
+background-color: transparent;
+transition: 0.5s all ease-in-out;
+filter: brightness(170%);
+}
+
+input[type=search]:focus,
+input[type=search]:not(:placeholder-shown) {
+    width: 350px;
+            background-color: #fff;
+            filter: brightness(100%);
+        }
+        
+    
