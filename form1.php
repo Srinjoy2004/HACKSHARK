@@ -4,6 +4,31 @@ include 'connection.php';
 $username = $_SESSION['username'];
 $userid = $_SESSION['id'];
 
+
+
+$username = $_SESSION['username'];
+$userid = $_SESSION['id'];
+// $res = "";
+if (isset($_POST['name'])) {
+    $name = $_POST["name"];
+    $age = $_POST["age"];
+    $email = $_POST["email"];
+    $github = $_POST["github"];
+    $about = $_POST["about"];
+
+    $sql1 = "INSERT INTO `form1` (`userid`,`name`,`age`,`email`,`github`,`about`) VALUES ('$userid','$name','$age','$email','$github','$about')";
+    $insertdata = mysqli_query($conn, $sql1);
+
+    if (!empty($insertdata)) {
+        header("location: form1.php");
+
+    }
+
+    // Close the database connection
+    $conn->close();
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,16 +80,16 @@ $userid = $_SESSION['id'];
 
                     </div>
                 </div>
-                                   
-                <div class="sub">
-                                    <button type="submit" class="nextBtn"> SUBMIT </button>
-                                </div>
-                    
-            </div>
-    
 
-    </form>
-    <i>Want to logout?<a href="logout.php">Logout</a></i>
+                <div class="sub">
+                    <button type="submit" class="nextBtn"> SUBMIT </button>
+                </div>
+
+            </div>
+
+
+        </form>
+        <i>Want to logout?<a href="logout.php">Logout</a></i>
 
 
     </div>

@@ -5,31 +5,31 @@ include 'connection.php';
 // print_r($_POST);
 
 //Now count one input field 8
-if(isset($_POST['skills1'])){
-$userid = 1;
-$count = count($_POST["skills1"]);
-// echo "COUNT: " . $count . "<br>";
+if (isset($_POST['skills1'])) {
+    $userid = 1;
+    $count = count($_POST["skills1"]);
+    // echo "COUNT: " . $count . "<br>";
 // $conn = mysqli_connect('localhost', 'root', '123', 'arrayExample');
 
 
-$qry = "INSERT INTO `team_req` (`user_id`,`skill`,`exp_year`) VALUES ";
+    $qry = "INSERT INTO `team_req` (`user_id`,`skill`,`exp_year`) VALUES ";
 
-//Now create loop for input fields
+    //Now create loop for input fields
 
-for($i=0; $i<$count; $i++){
-    $qry.="(".$userid.",'".$_POST["skills1"][$i]."','".$_POST["experiences1"][$i]."'),";
-}
+    for ($i = 0; $i < $count; $i++) {
+        $qry .= "(" . $userid . ",'" . $_POST["skills1"][$i] . "','" . $_POST["experiences1"][$i] . "'),";
+    }
 
-$finalQuery = rtrim($qry,',');
-// print($qry);
+    $finalQuery = rtrim($qry, ',');
+    // print($qry);
 //Now excute query
 
-$insertdata = mysqli_query($conn, $finalQuery);
+    $insertdata = mysqli_query($conn, $finalQuery);
 
-if(!empty($insertdata)){ 
-    header("location: login.php");
+    if (!empty($insertdata)) {
+        header("location: home.php");
 
-} 
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -66,13 +66,15 @@ if(!empty($insertdata)){
                                                 </div>  -->
                                     <div class="form-group">
                                         <label for="experience">Years of Experience:</label>
-                                        <input class="sponge" type="number" id="experience" name="experiences1[]" required>
+                                        <input class="sponge" type="number" id="experience" name="experiences1[]"
+                                            required>
                                     </div>
                                     <!-- <div class="form-group">
                                                     <label for="achievements">Achievements:</label>
                                                     <textarea id="achievements" name="achievements[]" rows="2"></textarea>
                                                 </div> -->
-                                    <button type="button" class="remove-skill-btn" onclick="removeSkil(this)">Remove</button>
+                                    <button type="button" class="remove-skill-btn"
+                                        onclick="removeSkil(this)">Remove</button>
                                 </div>
                             </div>
                             <button type="button" class="add-skill-btn" onclick="addSkil()">Add Skill</button>
@@ -87,7 +89,7 @@ if(!empty($insertdata)){
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
 
@@ -135,7 +137,7 @@ if(!empty($insertdata)){
             const skillInput = button.parentElement;
             skillsContain.removeChild(skillInput);
         }
-   
+
     </script>
 </body>
 

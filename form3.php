@@ -1,4 +1,40 @@
+<?php
+$insert = false;
+include 'connection.php';
+// Check if the form is submitted
+if (isset($_POST['username'])) {
+    // Set connection variables
+    // $server = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $database = "hackathon";
 
+    // Create a database connection
+    // $conn = new mysqli($server, $username, $password, $database);
+
+    // Check for connection success
+    if (!$conn) {
+        die("Connection to this database failed due to " . mysqli_connect_error());
+    }
+
+    // Collect post variables
+    $link = $_POST['link'];
+    $userid = 1;
+
+
+    // Insert data into the database
+    $sql = "INSERT INTO `achievements` (`user_id`,`link`) VALUES ($userid,'$link');";
+    $insertdata = mysqli_query($conn, $sql);
+
+    if (!empty($insertdata)) {
+        header("location: form4.php");
+
+    }
+
+    // Close the database connection
+    $conn->close();
+}
+?>
 
 
 
