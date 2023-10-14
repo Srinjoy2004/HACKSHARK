@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: home.php");
         $rowUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $_SESSION['id'] = $rowUser['id'];
+        $_SESSION['username'] = $rowUser['username'];
 
 
         exit();
