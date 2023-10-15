@@ -54,7 +54,7 @@ if (isset($_POST['username'])) {
 <body>
     <div class="container">
         <header>COMPLETE YOUR PROFILE</header>
-        <form action="display.php" method="POST">
+        <form action="form4.php" method="POST">
             <div class="form">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
