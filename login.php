@@ -2,17 +2,10 @@
 include 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
-    // $email = $_POST["email"];
     $password = $_POST["password"];
 
-
-
-
-    $username = $_POST['username'];
-    // $email = $_POST['email'];
-    $password = $_POST['password'];
     $_SESSION['username'] = $username;
-    $sql = "INSERT INTO `login`.`login` (`username`,  `password`) VALUES ('$username',  '$password');";
+    // $sql = "INSERT INTO `login`.`login` (`username`,  `password`) VALUES ('$username',  '$password');";
 
     // if ($conn->connect_error) {
     //     die("Connection failed: " . $conn->connect_error);
@@ -21,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Replace with your authentication logic (e.g., querying the database).
     // For this example, we'll assume a user with the provided email and password exists.
-    $sql = "SELECT * FROM login WHERE username = '$username' AND password = '$password'";
+    $sql = "SELECT * FROM `login` WHERE `username` = '$username' AND `password` = '$password'";
     $result = $conn->query($sql);
 
     //$sql1 = "SELECT username FROM login";
@@ -32,12 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows == 1) {
         //Authentication successful, redirect to a welcome page.
-        header("Location: home.php");
         $rowUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $_SESSION['id'] = $rowUser['id'];
-        $_SESSION['username'] = $rowUser['username'];
-
-
+        // $_SESSION['username'] = $rowUser['username'];
+        
+        
+        header("Location: form1.php");
         exit();
     } else {
         // Authentication failed, show an error message.

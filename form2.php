@@ -1,12 +1,16 @@
 <?php
 include 'connection.php';
-//let's start.
 
-// print_r($_POST);
 
-//Now count one input field 8
+$userid = $_SESSION['id'];
+$details = "SELECT * FROM `user_skills` WHERE `user_id` = $userid";
+$present = mysqli_query($conn, $details);
+if ($present->num_rows < 1) {
+    if($_SESSION['form1'] == true){
+    echo  "<script>alert('Please complete your profile page');</script>";
+    }
 if (isset($_POST['skills'])) {
-    $userid = 1;
+    // $userid = 1;
     $count = count($_POST["skills"]);
     echo "COUNT: " . $count . "<br>";
     // $conn = mysqli_connect('localhost', 'root', '123', 'arrayExample');
@@ -30,6 +34,10 @@ if (isset($_POST['skills'])) {
         header("location: form3.php");
 
     }
+}
+}else{
+    $_SESSION['form2'] = true;
+    header("location: form3.php");
 }
 ?>
 <!DOCTYPE html>

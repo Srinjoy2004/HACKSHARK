@@ -4,124 +4,18 @@
     <script src="https://kit.fontawesome.com/6e9db139fc.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/profile.css">
     <title>My Profile</title>
-    <style>
-        body {
-            font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
-            margin: 0;
-            padding: 0;
-            background-color: #03041f;
-            color: #79ebc0;
-        }
-
-        header {
-            background-color: #03041f ;
-        
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #003151;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.959);
-        }
-
-        .profile-pic {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .profile-pic img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .about-me,
-        .skills,
-        .my-work,
-        .icons {
-            margin: 20px 0;
-            
-        }
-
-        .icons {
-            display: flex;
-            justify-content: center;
-        }
-
-        .icons a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 20px;
-        }
-
-        .slider-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            overflow: hidden;
-            background-color:#03041f;
-            border-radius: 5px;
-        }
-
-        .slider-content {
-            display: flex;
-            transition: transform 0.5s;
-        }
-
-        .slide {
-            flex: 0 0 100%;
-            min-width: 100%;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .slide img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .slide-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .skills li{
-            display: flex;
-        }
-        i{
-            color:  #79ebc0;
-        }
-        i:hover{
-            color: #102818;
-        }
-        .icons i:hover{
-            color: #102818; 
-        }
-    </style>
+    
 </head>
 <body>
     <header>
         <h1>My Profile</h1>
     </header>
     <div class="container">
-       <a href="index.html"> <i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-2xl"></i></a>
+       <a href="home.html"> <i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-2xl"></i></a>
         <div class="profile-pic">
-            <img src="profile.png" alt="Profile Picture">
+            <img src="images\profile.png" alt="Profile Picture">
         </div>
         <div class="about-me">
           <center> <a href="form.html"> <i class="fa-solid fa-pen-to-square fa-2xl"></i></a></center>

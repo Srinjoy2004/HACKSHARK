@@ -2,11 +2,15 @@
 include 'connection.php';
 //let's start.
 
-// print_r($_POST);
-
-//Now count one input field 8
+$userid = $_SESSION['id'];
+$details = "SELECT * FROM `team_req` WHERE `user_id` = $userid";
+$present = mysqli_query($conn, $details);
+if ($present->num_rows < 1) {
+    if($_SESSION['form3'] == true){
+        echo  "<script>alert('Please complete your profile page');</script>";
+        }
 if (isset($_POST['skills1'])) {
-    $userid = 1;
+    // $userid = 1;
     $count = count($_POST["skills1"]);
     // echo "COUNT: " . $count . "<br>";
 // $conn = mysqli_connect('localhost', 'root', '123', 'arrayExample');
@@ -30,6 +34,9 @@ if (isset($_POST['skills1'])) {
         header("location: home.php");
 
     }
+}
+}else{
+    header("location: home.php");
 }
 ?>
 <!DOCTYPE html>

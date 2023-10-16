@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +86,7 @@ input[type=search]:focus,
                 </form>
             </li>
             <li>
-            <a href=""><img  class ="prof"src="profile.png" alt=""></a>
+            <a href="profile.php"><img  class ="prof"src="images\profile.png" alt=""></a>
             </li>
               
               
@@ -100,11 +101,11 @@ input[type=search]:focus,
     <script>
   // Show the alert when the page loads
   window.onload = function() {
-    alert("Please complete your profile page");
+    alert("WELCOME");
     
     // Wait for the user to click "OK" in the alert
     // and then redirect to another page
-    window.location.href = "form1.php"; // Replace with the URL you want to redirect to
+    // window.location.href = "form1.php"; // Replace with the URL you want to redirect to
   };
 </script>
         <section></section>

@@ -1,34 +1,34 @@
 <?php
 include 'connection.php';
-
-$username = $_SESSION['username'];
 $userid = $_SESSION['id'];
+$details = "SELECT * FROM `form1` WHERE `userid` = $userid";
+$present = $conn->query($details);
+if ($present->num_rows < 1) {
 
+    echo  "<script>alert('Please complete your profile page');</script>";
+    $username = $_SESSION['username'];
+    // $res = "";
+    if (isset($_POST['name'])) {
+        $name = $_POST["name"];
+        $age = $_POST["age"];
+        $email = $_POST["email"];
+        $github = $_POST["github"];
+        $about = $_POST["about"];
 
+        $sql1 = "INSERT INTO `form1` (`userid`,`name`,`age`,`email`,`github`,`about`) VALUES ('$userid','$name','$age','$email','$github','$about')";
+        $insertdata = mysqli_query($conn, $sql1);
 
-$username = $_SESSION['username'];
-$userid = $_SESSION['id'];
-// $res = "";
-if (isset($_POST['name'])) {
-    $name = $_POST["name"];
-    $age = $_POST["age"];
-    $email = $_POST["email"];
-    $github = $_POST["github"];
-    $about = $_POST["about"];
+        if (!empty($insertdata)){
+            header("location: form2.php");
+        }
 
-    $sql1 = "INSERT INTO `form1` (`userid`,`name`,`age`,`email`,`github`,`about`) VALUES ('$userid','$name','$age','$email','$github','$about')";
-    $insertdata = mysqli_query($conn, $sql1);
-
-    if (!empty($insertdata)) {
-        header("location: form1.php");
-
+        // Close the database connection
+        $conn->close();
     }
-
-    // Close the database connection
-    $conn->close();
+} else {
+    $_SESSION['form1'] = true;
+    header("location: form2.php");
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ if (isset($_POST['name'])) {
 <body>
     <div class="container">
         <header>COMPLETE YOUR PROFILE</header>
-        <form action="form2.php" method="POST">
+        <form action="form1.php" method="POST">
             <div class="form">
                 <div class="details personal">
                     <span class="title">Personal Details</span>

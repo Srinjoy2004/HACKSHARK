@@ -1,16 +1,15 @@
 <?php
-$insert = false;
-include 'connection.php';
-// Check if the form is submitted
-if (isset($_POST['username'])) {
-    // Set connection variables
-    // $server = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $database = "hackathon";
 
-    // Create a database connection
-    // $conn = new mysqli($server, $username, $password, $database);
+include 'connection.php';
+$userid = $_SESSION['id'];
+$details = "SELECT * FROM `achievements` WHERE `user_id` = $userid";
+$present = mysqli_query($conn, $details);
+if ($present->num_rows < 1) {
+
+if (isset($_POST['link'])) {
+    if($_SESSION['form2'] == true){
+    echo  "<script>alert('Please complete your profile page');</script>";
+    }
 
     // Check for connection success
     if (!$conn) {
@@ -19,7 +18,7 @@ if (isset($_POST['username'])) {
 
     // Collect post variables
     $link = $_POST['link'];
-    $userid = 1;
+    // $userid = 1;
 
 
     // Insert data into the database
@@ -33,6 +32,10 @@ if (isset($_POST['username'])) {
 
     // Close the database connection
     $conn->close();
+}
+}else{
+    $_SESSION['form3'] = true;
+    header("location: form4.php");
 }
 ?>
 
@@ -54,7 +57,7 @@ if (isset($_POST['username'])) {
 <body>
     <div class="container">
         <header>COMPLETE YOUR PROFILE</header>
-        <form action="form4.php" method="POST">
+        <form action="form3.php" method="POST">
             <div class="form">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
