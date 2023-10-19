@@ -1,15 +1,25 @@
+
 <?php
 include 'connection.php';
-// print_r("Post : ".$_POST);
 $userid = $_SESSION['id'];
-$details = "SELECT * FROM `form1` WHERE `userid` = $userid";
-$present = $conn->query($details);
-if($present->num_rows>=1){
-    echo "Sorted";
-}else{
-    echo "Not Sorted";
-}
+$details = "SELECT * FROM `form1` WHERE `userid` = '$userid'";
+$result = $conn->query($details);
+$rowUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
+$git = $rowUser['github'];
+print_r($git);
+// include 'connection.php';
+// // print_r("Post : ".$_POST);
+// $userid = $_SESSION['id'];
+// $details = "SELECT * FROM `form1` WHERE `userid` = $userid";
+// $present = $conn->query($details);
+// if($present->num_rows>=1){
+//     echo "Sorted";
+// }else{
+//     echo "Not Sorted";
+// }
 ?>
+
+
 
 <!-- // //let's start.
 

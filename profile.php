@@ -1,3 +1,11 @@
+<?PHP
+    include 'connection.php';
+    $userid = $_SESSION['id'];
+    $details = "SELECT * FROM `form1` WHERE `userid` = '$userid'";
+    $result = $conn->query($details);
+    $rowUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $git = $rowUser['github'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +66,7 @@
             <a href="">
                 <i class="fa-solid fa-award fa-2xl" style="color:  #79ebc0; "></i>
             </a>
-            <a href="https://github.com/yourusername">
+            <a href="<?php echo $git ?>">
                 <i class="fa-brands fa-github fa-2xl" style="color:  #79ebc0;"></i>
             </a>
         </div>
