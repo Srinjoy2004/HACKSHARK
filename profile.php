@@ -21,12 +21,12 @@
         <h1>My Profile</h1>
     </header>
     <div class="container">
-       <a href="home.html"> <i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-2xl"></i></a>
+       <a href="home.php"> <i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-2xl"></i></a>
         <div class="profile-pic">
             <img src="images\profile.png" alt="Profile Picture">
         </div>
         <div class="about-me">
-          <center> <a href="form.html"> <i class="fa-solid fa-pen-to-square fa-2xl"></i></a></center>
+          <center> <a href="#"> <i class="fa-solid fa-pen-to-square fa-2xl"></i></a></center>
            
             <center><p style="color:#fff ;">This section will be populated with information from your form.</p></center>
         </div>
@@ -70,6 +70,7 @@
                 <i class="fa-brands fa-github fa-2xl" style="color:  #79ebc0;"></i>
             </a>
         </div>
+        <a href = "logout.php"><center><p style="color:#fff ;">LOGOUT</p></center></a>
     </div>
     <script>
         const sliderContent = document.querySelector(".slider-content");

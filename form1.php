@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+
 $userid = $_SESSION['id'];
 $details = "SELECT * FROM `form1` WHERE `userid` = $userid";
 $present = $conn->query($details);

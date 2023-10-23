@@ -1,13 +1,13 @@
 <?php
-
 include 'connection.php';
+
 $userid = $_SESSION['id'];
 $details = "SELECT * FROM `achievements` WHERE `user_id` = $userid";
 $present = mysqli_query($conn, $details);
 if ($present->num_rows < 1) {
 
 if (isset($_POST['link'])) {
-    if($_SESSION['form2'] == true){
+    if(isset($_SESSION['form2'])){
     echo  "<script>alert('Please complete your profile page');</script>";
     }
 
