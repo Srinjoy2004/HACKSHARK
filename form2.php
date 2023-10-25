@@ -1,41 +1,39 @@
 <?php
 include 'connection.php';
 
-
 $userid = $_SESSION['id'];
 $details = "SELECT * FROM `user_skills` WHERE `user_id` = $userid";
 $present = mysqli_query($conn, $details);
 if ($present->num_rows < 1) {
-    if($_SESSION['form1'] == true){
-    echo  "<script>alert('Please complete your profile page');</script>";
+    if (isset($_SESSION['form1'])) {
+        echo  "<script>alert('Please complete your profile page');</script>";
     }
-if (isset($_POST['skills'])) {
-    // $userid = 1;
-    $count = count($_POST["skills"]);
-    echo "COUNT: " . $count . "<br>";
-    // $conn = mysqli_connect('localhost', 'root', '123', 'arrayExample');
+    if (isset($_POST['skills'])) {
+        // $userid = 1;
+        $count = count($_POST["skills"]);
+        echo "COUNT: " . $count . "<br>";
+        // $conn = mysqli_connect('localhost', 'root', '123', 'arrayExample');
 
 
-    $qry = "INSERT INTO `user_skills` (`user_id`,`skill`,`link`,`years_work`) VALUES ";
+        $qry = "INSERT INTO `user_skills` (`user_id`,`skill`,`link`,`years_work`) VALUES ";
 
-    //Now create loop for input fields
+        //Now create loop for input fields
 
-    for ($i = 0; $i < $count; $i++) {
-        $qry .= "(" . $userid . ",'" . $_POST["skills"][$i] . "','" . $_POST["workLinks"][$i] . "'," . $_POST["experiences"][$i] . "),";
+        for ($i = 0; $i < $count; $i++) {
+            $qry .= "(" . $userid . ",'" . $_POST["skills"][$i] . "','" . $_POST["workLinks"][$i] . "'," . $_POST["experiences"][$i] . "),";
+        }
+
+        $finalQuery = rtrim($qry, ',');
+        // print($qry);
+        //Now excute query
+
+        $insertdata = mysqli_query($conn, $finalQuery);
+
+        if (!empty($insertdata)) {
+            header("location: form3.php");
+        }
     }
-
-    $finalQuery = rtrim($qry, ',');
-    // print($qry);
-//Now excute query
-
-    $insertdata = mysqli_query($conn, $finalQuery);
-
-    if (!empty($insertdata)) {
-        header("location: form3.php");
-
-    }
-}
-}else{
+} else {
     $_SESSION['form2'] = true;
     header("location: form3.php");
 }
@@ -80,8 +78,7 @@ if (isset($_POST['skills'])) {
                                             <label for="achievements">Achievements:</label>
                                             <textarea id="achievements" name="achievements[]" rows="2"></textarea>
                                         </div>-->
-                                <button type="button" class="remove-skill-btn"
-                                    onclick="removeSkill(this)">Remove</button>
+                                <button type="button" class="remove-skill-btn" onclick="removeSkill(this)">Remove</button>
                             </div>
                         </div>
                         <button type="button" class="add-skill-btn" onclick="addSkill()">Add Skill</button>
@@ -122,6 +119,7 @@ if (isset($_POST['skills'])) {
             const skillInputGroup = button.parentElement;
             skillsContainer.removeChild(skillInputGroup);
         }
+
         function addSkil() {
             const skillsContain = document.querySelector('.skillsncontainer');
             const skillInput = skillsContain.querySelector('.skillinputngroup');
@@ -141,7 +139,6 @@ if (isset($_POST['skills'])) {
             const skillInput = button.parentElement;
             skillsContain.removeChild(skillInput);
         }
-
     </script>
 </body>
 

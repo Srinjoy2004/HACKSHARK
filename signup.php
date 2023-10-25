@@ -1,17 +1,7 @@
 <?php
-$insert = false;
 include 'connection.php';
 // Check if the form is submitted
 if (isset($_POST['username'])) {
-    // Set connection variables
-    // $server = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $database = "hackathon";
-
-    // Create a database connection
-    // $conn = new mysqli($server, $username, $password, $database);
-
     // Check for connection success
     if (!$conn) {
         die("Connection to this database failed due to " . mysqli_connect_error());
@@ -21,7 +11,7 @@ if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    
     // Check if the username or email already exists in the database
     $checkQuery = "SELECT * FROM `login` WHERE `username` = '$username' OR `email` = '$email'";
     $checkResult = $conn->query($checkQuery);
@@ -45,7 +35,7 @@ if (isset($_POST['username'])) {
         // Display a JavaScript alert
         echo '<script>
             alert("You are signed up.");
-            window.location.href = "home.php";
+            window.location.href = "login.php";
         </script>';
 
         exit;
