@@ -72,7 +72,7 @@ if (isset($_POST['username'])) {
 </head>
 
 <body>
-    <div class="container" style='background-image: url("images/back1.jpg");'>
+    <div class="container" >
         <div class="form-box">
             <h1 id="title">SIGN UP</h1>
             <!-- Add the action attribute to the form to specify where to send the form data -->
