@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <div class="container" id='bgimg' >
+    <div class="container" id='bgimg' style='background-image: url("images/back1.jpg");'>
         <div class="form-box">
             <h1 id="title">LOG IN</h1>
             <form action="login.php" method="POST">
