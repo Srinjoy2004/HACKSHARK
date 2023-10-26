@@ -6,13 +6,26 @@ body, h1, p, ul {
 h2{
     color: #ffffff;
 }
+ 
+ 
+
+    .profile-container {
+        background-color: #23203f;  
+        padding: 20px;  
+        border-radius: 10px;  
+        margin: 5%; 
+    }
+    
+    
+
+
 
 /* Set a background color for the body */
  
 
 /* Style the header */
 header {
-    background-color: #23203f;
+    background-color: #17192d;
     color: #fff;
     padding: 20px;
     text-align: center;
