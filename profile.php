@@ -17,6 +17,7 @@
 </head>
 <body>
     <header>
+<<<<<<< HEAD
         <div class="profile-header">
             <div class="profile-pic">
                 <img src="images/profile.png" alt="Profile Picture">
@@ -25,6 +26,50 @@
                 <h1>Your Name</h1>
                 <!-- <p>Headline / Occupation</p>
                 <p>Location</p> -->
+=======
+        <h1>My Profile</h1>
+    </header>
+    <div class="container">
+       <a href="home.php"> <i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-2xl"></i></a>
+        <div class="profile-pic">
+            <img src="images\profile.png" alt="Profile Picture">
+        </div>
+        <div class="about-me">
+          <center> <a href="#"> <i class="fa-solid fa-pen-to-square fa-2xl"></i></a></center>
+           
+            <center><p style="color:#fff ;">This section will be populated with information from your form.</p></center>
+        </div>
+        <div class="skills">
+          <center>  <h2>Skills</h2></center>
+           <li>
+            <ul></ul>
+            <ul></ul>
+           </li>
+        </div>
+        <div class="my-work">
+          <center>  <h2>My Work</h2></center>
+            <div class="slider-container">
+                <div class="slider-content">
+                    <div class="slide">
+                        <div class="slide-content">
+                           <a href="">Project1</a> 
+                            <!-- <p>Project 1 Description</p> -->
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                           <a href=""> Project2</a>
+                            <!-- <p>Project 2 Description</p> -->
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <a href=""> Project3</a>
+                            <!-- <p>Project 3 Description</p> -->
+                        </div>
+                    </div>
+                </div>
+>>>>>>> 16a5d118fe2c037a481d0d0c58ff826bb95849a9
             </div>
         </div>
     </header>
@@ -33,6 +78,7 @@
             <h2>Bio</h2>
             <p>Your summary or description goes here.</p>
         </div>
+<<<<<<< HEAD
     </section>
     <!-- <section id="experience">
         <div class="experience">
@@ -87,6 +133,9 @@
         <a href="<?php echo $git ?>">
             <i class="fa-brands fa-github fa-2xl" style="color:   #f9b17a;"></i>
             </a>
+=======
+        <a href = "logout.php"><center><p style="color:#fff ;">LOGOUT</p></center></a>
+>>>>>>> 16a5d118fe2c037a481d0d0c58ff826bb95849a9
     </div>
 </body>
 </html>

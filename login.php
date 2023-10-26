@@ -47,12 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://kit.fontawesome.com/6e9db139fc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css\style.css">
 </head>
 
 <body>
@@ -65,18 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-field">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" name="username" placeholder="Username*" required>
-
-
                     </div>
-                    <!-- <div class="input-field" id="nameField">
-            <i class="fa-solid fa-envelope"></i>
-            <input type="email" name="email" placeholder="Email*" required>
-        </div> -->
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" name="password" placeholder="Password*" required>
                     </div>
-                    <pre>    <a href="#">Forget Password</a> </pre>
+                    <pre>    <a href="forget_password.php">Forget Password</a> </pre>
                 </div>
                 <div class="btn-field">
                     <button type="submit" id="signupBtn"><b> LOG IN</b></button>

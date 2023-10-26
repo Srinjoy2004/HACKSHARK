@@ -116,18 +116,19 @@ color: #f9b17a;
     
 }
 
-.input-group{
+.input-group {
     height: 280px;
-    color: #ffffff;
-    
+    color: black;
+
 }
-.btn-field button.disable
-{
-    background: #ffffff;
-    color:black;
-    
+
+.btn-field button.disable {
+    background: #eaeaea;
+    color: black;
+
 }
-.sub{
+
+.sub {
     width: 100%;
     display: flex;
     

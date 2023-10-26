@@ -1,12 +1,11 @@
 <?php
 include 'connection.php';
-//let's start.
 
 $userid = $_SESSION['id'];
 $details = "SELECT * FROM `team_req` WHERE `user_id` = $userid";
 $present = mysqli_query($conn, $details);
 if ($present->num_rows < 1) {
-    if($_SESSION['form3'] == true){
+    if(isset($_SESSION['form3'])){
         echo  "<script>alert('Please complete your profile page');</script>";
         }
 if (isset($_POST['skills1'])) {
