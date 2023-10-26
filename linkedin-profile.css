@@ -1,0 +1,104 @@
+/* Reset some default styles */
+body, h1, p, ul {
+    margin: 0;
+    padding: 0;
+}
+h2{
+    color: #ffffff;
+}
+
+/* Set a background color for the body */
+ 
+
+/* Style the header */
+header {
+    background-color: #23203f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-info p {
+    font-size: 16px;
+}
+
+/* Style sections */
+section {
+    background-color: #676f9d;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style skills */
+.skills ul {
+    list-style: none;
+}
+
+.skills li {
+    display: inline-block;
+    background-color: #0077B5;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Style contact information */
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Style recommendations and interests */
+.recommendations p, .interests p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style icons */
+.icons {
+    text-align: center;
+    margin: 20px;
+}
+
+.icons a {
+    color: #f9b17a;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+/* Add a hover effect to icons */
+.icons a:hover {
+    color: #005e8d;
+}
+body{
+    background-color: #17192d;
+}

@@ -44,7 +44,7 @@ if (isset($_POST['skills'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css\form.css">
+    <link rel="stylesheet" href="f2.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,54 +53,34 @@ if (isset($_POST['skills'])) {
 </head>
 
 <body>
-    <div class="container">
+     <div class="container">
         <header>COMPLETE YOUR PROFILE</header>
         <form action="form2.php" method="POST">
             <div class="form">
                 <div class="details personal">
-                    <span class="title">Personal Details</span>
-                    <div class="details personal">
-                        <span class="title">Skills</span>
-
-                        <div class="skills-container">
-                            <div class="skill-input-group">
-                                <div class="form-group">
-                                    <label for="skill">Skill:</label>
-                                    <input type="text" id="skill" name="skills[]" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="workLink">Link to Your Work:</label>
-                                    <input class="sponge" type="url" id="workLink" name="workLinks[]" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="experience">Years of Experience:</label>
-                                    <input class="sponge" type="number" id="experience" name="experiences[]" required>
-                                </div>
-                                <!-- <div class="form-group">
-                                            <label for="achievements">Achievements:</label>
-                                            <textarea id="achievements" name="achievements[]" rows="2"></textarea>
-                                        </div>-->
-                                <button type="button" class="remove-skill-btn"
-                                    onclick="removeSkill(this)">Remove</button>
+                    <!-- <span class="title">Personal Details</span> -->
+                    <div class="skills-container">
+                        <div class="skill-input-group">
+                            <div class="form-group">
+                                <label for="skill">Skill:</label>
+                                <input type="text" class="sponge" id="skill" name="skills[]" required>
                             </div>
+                            <div class="form-group">
+                                <label for="experience">Years of Experience:</label>
+                                <input class="sponge" type="number" id="experience" name="experiences[]" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="workLink">Link to Your Work:</label>
+                                <input class="sponge" type="url" id="workLink" name="workLinks[]" required>
+                            </div>
+                            <button type="button" class="remove-skill-btn" onclick="removeSkill(this)">Remove</button>
                         </div>
-                        <button type="button" class="add-skill-btn" onclick="addSkill()">Add Skill</button>
                     </div>
-
-
+                    <button type="button" class="add-skill-btn" onclick="addSkill()">Add Skill</button>
                 </div>
-
-                <div class="sub">
-                    <button type="submit" class="nextBtn"> SUBMIT </button>
-                </div>
-
+                <button type="submit" class="sub">Submit</button>
             </div>
-
-
         </form>
-        <i>Want to logout?<a href="logout.php">Logout</a></i>
-
-
     </div>
     <script>
         function addSkill() {

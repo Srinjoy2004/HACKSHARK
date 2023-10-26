@@ -38,12 +38,11 @@ if (isset($_POST['skills1'])) {
 }else{
     header("location: home.php");
 }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css\form.css">
+    <link rel="stylesheet" href="f4.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,7 +56,7 @@ if (isset($_POST['skills1'])) {
         <form action="form4.php" method="POST">
             <div class="form">
                 <div class="details personal">
-                    <span class="title">Personal Details</span>
+                    <!-- <span class="title">Personal Details</span> -->
                     <div class="form second">
                         <div class="Needs">
                             <span class="ques">What skills are you looking in you teammates?</span>
@@ -65,7 +64,7 @@ if (isset($_POST['skills1'])) {
                                 <div class="skillinputngroup">
                                     <div class="form-group">
                                         <label for="skill">Skill:</label>
-                                        <input type="text" id="skil" name="skills1[]" required>
+                                        <input type="text" class="skl"id="skil" name="skills1[]" required>
                                     </div>
                                     <!-- <div class="form-group">
                                                     <label for="workLink">Link to Your Work:</label>
@@ -101,7 +100,7 @@ if (isset($_POST['skills1'])) {
 
 
         </form>
-        <i>Want to logout?<a href="logout.php">Logout</a></i>
+        <!-- <i>Want to logout?<a href="logout.php">Logout</a></i> -->
 
 
     </div>
@@ -147,5 +146,4 @@ if (isset($_POST['skills1'])) {
 
     </script>
 </body>
-
 </html>

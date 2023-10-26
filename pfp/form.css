@@ -1,9 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 'Poppins',sans-serif;
-}
+
 body{
     min-height: 100vh;
     display: flex;
@@ -14,8 +9,8 @@ body{
 }
 .container{
     position: relative;
-    max-width: 900px;
-    width: 100%;
+    max-width: 100%;
+    width: 80%;
     padding: 30px;
     margin: 0 15px;
     border-radius: 6px;
@@ -43,7 +38,7 @@ box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 .container form{
     position: relative;
     margin: 16px;
-    min-height: 490px;
+    min-height: 80%;
     background-color: #f2f2f2;
 }
 .container form .details{
@@ -161,7 +156,7 @@ form .fields .input-field{
     align-items: center;
     justify-content: center;
     height: 45px;
-    max-width: 200px;
+    max-width: 200%;
     width: 100%;
     border: none;
     outline: none;

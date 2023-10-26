@@ -46,7 +46,8 @@ if (isset($_POST['link'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css\form.css">
+    <link rel="stylesheet" href="ffp.css">
+    
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,42 +56,56 @@ if (isset($_POST['link'])) {
 </head>
 
 <body>
+    
     <div class="container">
-        <header>COMPLETE YOUR PROFILE</header>
-        <form action="form3.php" method="POST">
-            <div class="form">
-                <div class="details personal">
-                    <span class="title">Personal Details</span>
-                    <div class="details personal">
-                        <span class="title">Achievements</span>
-
-                        <div class="fields">
-                            <div class="input-field">
-                                <!-- <label for="">Achievements</label> -->
-                                <input type="url" placeholder="Drive Link Of Your Achievements" name="link">
-                            </div>
-                        </div>
-                        <!-- <button class="nextBtn">
-                                         <a href="page2.html">  <span class="btnText">Next</span></a> 
-                                            <i class="uil uil-navigator"></i>
-                                        </button> -->
-
-
-                    </div>
-
-                    <div class="sub">
-                        <button type="submit" class="nextBtn"> SUBMIT </button>
-                    </div>
+        <h1>COMPLETE YOUR PROFILE</h1>
+        <form action="">
+            <div class="row">
+                <div class="column">
+                    <label for="name">Link Your Achievements</label>
+                    <input type="link" name="name" id="name" placeholder="">
+                </div>
+                </div>
+                <!-- <div class="column">
+                    <label for="email">Email</label>
+                    <input type=" email" name="email" id="email" placeholder="Your Email Here">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
 
                 </div>
+                <div class="column">
+                    <label for="github">GitHub</label>
+                    <input type="url" id="github" name="github">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <label for="age">Bio</label>
+                    <textarea name="bio" id="bio" rows="3"></textarea>
+                </div>
+            </div> -->
+            <div class="button">
+                <button>Submit</button>
+            </div>
 
 
         </form>
-        <i>Want to logout?<a href="logout.php">Logout</a></i>
 
 
     </div>
 
+    <!-- <i>Want to logout?<a href="logout.php">Logout</a></i> -->
+
+
+    </div>
+
+
 </body>
 
 </html>
+ 
