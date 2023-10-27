@@ -35,63 +35,18 @@ if ($present->num_rows < 1) {
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfileForm</title>
-    <link rel="stylesheet" href="form1.css">
+    <link rel="stylesheet" href="css\form1.css">
 </head>
 
 <body>
-    <!-- <div class="container">
-        <header>COMPLETE YOUR PROFILE</header> -->
-        <!-- <form action="form1.php" method="POST"> -->
-            <!-- <div class="form">
-                <div class="details personal">
-                    <span class="title">Personal Details</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label for="">Full Name</label>
-                            <input type="text" name="name" placeholder="Enter Your Name" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="">Username</label>
-                             <input type="name"name="username" placeholder="" required> -->
-                            
-                        <!-- </div>
-                        <div class="input-field">
-                            <label for="">Name</label>
-                            <input type="number" name="age" placeholder="" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label for="">Email</label>
-                            <input type="email" name="email" placeholder="" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="">GitHub Profile</label>
-                            <input type="url" name="github" placeholder="" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="">About User</label>
-                            <input type="text" name="about" placeholder="" maxlength="30">
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="sub">
-                    <button type="submit" class="nextBtn"> SUBMIT </button>
-                </div>
-
-            </div>
-
-
-        </form> -->  
         <div class="container">
         <h1>COMPLETE YOUR PROFILE</h1>
-        <form action="">
+        <form action="form1.php" method="POSTS">
             <div class="row">
                 <div class="column">
                     <label for="name">Name</label>
@@ -99,42 +54,42 @@ if ($present->num_rows < 1) {
                 </div>
                 <div class="column">
                     <label for="email">Email</label>
-                    <input type=" email" name="email" id="email" placeholder="Your Email Here">
+                    <input type=" email" id="email" placeholder="Your Email Here">
                 </div>
             </div>
             <div class="row">
                 <div class="column">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username">
+                    <?php print($username) ?> 
 
                 </div>
                 <div class="column">
-                    <label for="github">GitHub</label>
-                    <input type="url" id="github" name="github">
-                </div>
+                <label for="github">GitHub</label>
+                <input type="url" id="github" name="github">
+            </div>
             </div>
 
-            <div class="row">
+              <div class="row"> 
                 <div class="column">
                     <label for="age">Bio</label>
-                    <textarea name="bio" id="bio" rows="3"></textarea>
+                    <textarea name="bio" id="bio"  rows="3"></textarea>
                 </div>
-            </div>
-            <div class="button">
-                <button>Submit</button>
-            </div>
-
-
+                </div>
+                <div class="button">
+                    <button>Submit</button>
+                </div>
+                 
+        
         </form>
 
 
-    </div>
+    <!-- </div>
+    
+        <i>Want to logout?<a href="logout.php">Logout</a></i>
 
-    <i>Want to logout?<a href="logout.php">Logout</a></i>
 
-
-    </div>
-
+    </div> -->
 
 </body>
 
