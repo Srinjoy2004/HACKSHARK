@@ -1,0 +1,89 @@
+/* Default styles for larger screens */
+body {
+    background-color: #17192d; /* Adjust the background color as needed */
+}
+
+/* Background color for the entire container */
+.container {
+    background-color: #23203f; /* Adjust the background color for the container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px; /* Adjust the width as needed */
+}
+
+/* Form box */
+.form {
+    background-color: #23203f;
+    padding: 20px;
+     
+}
+
+/* Define a separate style for the form background */
+.form-background {
+    background-color: #676f9d;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Define a common style for form groups within the form box */
+.form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+/* Adjust styling for labels and input elements */
+.form .form-group label {
+    color: #ffffff;
+}
+
+/* Style for the "Add Skill" and "Remove" buttons */
+.add-skill-btn,
+.remove-skill-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.add-skill-btn:hover{
+    background-color:#0e447f ;
+
+}
+.remove-skill-btn:hover{
+    background-color: orangered;
+
+}
+.sub{
+    background-color: #f9b17a;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.sub:hover{
+    background-color: #f9c8a3;
+}
+label{
+    color: #ffffff;
+}
+header{
+    color:#ffffff;
+    font-weight: bolder;
+}
+.sponge{
+    background-color: #676f9d;
+   
+}
+span{
+    color: #ffffff;
+}
+.skl{
+    background-color: #676f9d;
+}
