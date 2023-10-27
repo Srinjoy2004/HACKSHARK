@@ -35,6 +35,7 @@ if ($present->num_rows < 1) {
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,42 +55,42 @@ if ($present->num_rows < 1) {
                 </div>
                 <div class="column">
                     <label for="email">Email</label>
-                    <input type=" email" name="email" id="email" placeholder="Your Email Here">
+                    <input type=" email" id="email" placeholder="Your Email Here">
                 </div>
             </div>
             <div class="row">
                 <div class="column">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username">
+                    <?php print($username) ?> 
 
                 </div>
                 <div class="column">
-                    <label for="github">GitHub</label>
-                    <input type="url" id="github" name="github">
-                </div>
+                <label for="github">GitHub</label>
+                <input type="url" id="github" name="github">
+            </div>
             </div>
 
-            <div class="row">
+              <div class="row"> 
                 <div class="column">
                     <label for="age">Bio</label>
-                    <textarea name="bio" id="bio" rows="3"></textarea>
+                    <textarea name="bio" id="bio"  rows="3"></textarea>
                 </div>
-            </div>
-            <div class="button">
-                <button>Submit</button>
-            </div>
-
-
+                </div>
+                <div class="button">
+                    <button>Submit</button>
+                </div>
+                 
+        
         </form>
 
 
-    </div>
+    <!-- </div>
+    
+        <i>Want to logout?<a href="logout.php">Logout</a></i>
 
-    <i>Want to logout?<a href="logout.php">Logout</a></i>
 
-
-    </div>
-
+    </div> -->
 
 </body>
 
