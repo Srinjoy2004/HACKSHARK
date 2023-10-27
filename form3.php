@@ -46,7 +46,7 @@ if (isset($_POST['link'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="ffp.css">
+    <link rel="stylesheet" href="css/ffp.css">
     
 
     <meta charset="UTF-8">
@@ -59,11 +59,11 @@ if (isset($_POST['link'])) {
     
     <div class="container">
         <h1>COMPLETE YOUR PROFILE</h1>
-        <form action="">
+        <form action="form3.php" method="POST">
             <div class="row">
                 <div class="column">
                     <label for="name">Link Your Achievements</label>
-                    <input type="link" name="name" id="name" placeholder="">
+                    <input type="link" name="link" id="name" placeholder="">
                 </div>
                 </div>
                 <!-- <div class="column">

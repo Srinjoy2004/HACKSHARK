@@ -19,7 +19,7 @@ if ($present->num_rows < 1) {
         $sql1 = "INSERT INTO `form1` (`userid`,`name`,`age`,`email`,`github`,`about`) VALUES ('$userid','$name','$age','$email','$github','$about')";
         $insertdata = mysqli_query($conn, $sql1);
 
-        if (!empty($insertdata)){
+        if (!empty($insertdata)) {
             header("location: form2.php");
         }
 
@@ -39,59 +39,331 @@ if ($present->num_rows < 1) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfileForm</title>
-    <link rel="stylesheet" href="form1.css">
+    <link rel="stylesheet" href="css/form1.css">
+    <style>
+        /* Common Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            /* A light gray background */
+        }
+
+        .container {
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            padding: 20px;
+            margin: 0 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            /* White background */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            /* Subtle box shadow */
+        }
+
+        .container header {
+            position: relative;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 27px;
+            border-radius: 8px;
+            background-color: #4070f4;
+        }
+
+        .container form {
+            position: relative;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container form .details {
+            margin-top: 20px;
+        }
+
+        .container form .title {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            margin: 12px 0;
+        }
+
+        .container form .fields {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        form .fields .input-field {
+            display: flex;
+            width: calc(100% / 3 - 15px);
+            flex-direction: column;
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            outline: none;
+            font-size: 16px;
+            padding: 12px;
+            color: #333;
+            border-radius: 5px;
+            font-weight: 400;
+            border: 1px solid #ccc;
+            height: 42px;
+            margin: 10px 0;
+        }
+
+        input[type="text"]:is(:focus, :valid),
+        input[type="email"]:is(:focus, :valid),
+        input[type="password"]:is(:focus, :valid),
+        input[type="date"]:is(:focus, :valid) {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="date"] {
+            color: #333;
+        }
+
+        input[type="date"]:valid {
+            color: #333;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .add-skill-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .add-skill-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .skills-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .skill-input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .remove-skill-btn {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .remove-skill-btn:hover {
+            background-color: #d84315;
+        }
+
+        .nextBtn,
+        .backBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 45px;
+            max-width: 200px;
+            width: 100%;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 5px;
+            margin: 25px 0;
+            background-color: #4070f4;
+            transition: all 0.3s linear;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .container form .backBtn {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        form button:hover {
+            background-color: #265df2;
+        }
+
+        form button i,
+        form .backBtn i {
+            margin: 0 8px;
+        }
+
+        form .backBtn i {
+            transform: rotate(180deg);
+        }
+
+        form .buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        form .buttons button,
+        .backBtn {
+            margin-right: 20px;
+        }
+
+        a {
+            color: #4070f4;
+        }
+
+        .skillinputngroup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Media Queries for Responsive Design */
+
+        @media (max-width: 480px) {
+
+            /* Responsive adjustments for small screens (e.g., mobile devices) */
+            .container {
+                padding: 10px;
+            }
+
+            .container header {
+                font-size: 20px;
+            }
+
+            .container header::before {
+                bottom: -1px;
+                height: 1px;
+                width: 15px;
+            }
+
+            .container form {
+                margin: 10px;
+            }
+
+            .container form .details {
+                margin-top: 10px;
+            }
+
+            .container form .title {
+                font-size: 16px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="date"] {
+                padding: 10px;
+            }
+
+            .btn,
+            .add-skill-btn,
+            .remove-skill-btn {
+                padding: 10px 16px;
+            }
+
+            .nextBtn,
+            .backBtn {
+                height: 40px;
+                max-width: 160px;
+                font-size: 14px;
+            }
+
+            .container form .backBtn {
+                font-size: 14px;
+            }
+
+            form button i,
+            form .backBtn i {
+                margin: 0 6px;
+            }
+
+            @media (min-width: 768px) {
+
+                /* For screens wider than 768px (desktop) */
+                .form-group {
+                    display: inline-block;
+                    width: 48%;
+                    /* Two columns */
+                }
+            }
+
+            @media (max-width: 767px) {
+
+                /* For screens 767px and below (mobile) */
+                .form-group {
+                    display: block;
+                    width: 100%;
+                    /* Full width */
+                }
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            /* Responsive adjustments for large screens (e.g., desktops) */
+            .container {
+                max-width: 900px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <div class="container">
-        <header>COMPLETE YOUR PROFILE</header> -->
-        <!-- <form action="form1.php" method="POST"> -->
-            <!-- <div class="form">
-                <div class="details personal">
-                    <span class="title">Personal Details</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label for="">Full Name</label>
-                            <input type="text" name="name" placeholder="Enter Your Name" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="">Username</label>
-                             <input type="name"name="username" placeholder="" required> -->
-                            
-                        <!-- </div>
-                        <div class="input-field">
-                            <label for="">Name</label>
-                            <input type="number" name="age" placeholder="" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label for="">Email</label>
-                            <input type="email" name="email" placeholder="" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="">GitHub Profile</label>
-                            <input type="url" name="github" placeholder="" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="">About User</label>
-                            <input type="text" name="about" placeholder="" maxlength="30">
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="sub">
-                    <button type="submit" class="nextBtn"> SUBMIT </button>
-                </div>
-
-            </div>
-
-
-        </form> -->  
-        <div class="container">
+    <div class="container">
         <h1>COMPLETE YOUR PROFILE</h1>
-        <form action="">
+        <form action="form1.php" method="POST">
             <div class="row">
                 <div class="column">
                     <label for="name">Name</label>
