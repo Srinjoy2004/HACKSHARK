@@ -41,7 +41,7 @@ if (isset($_POST['skills1'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="f4.css">
+    <link rel="stylesheet" href="css/f4.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

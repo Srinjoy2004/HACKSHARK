@@ -46,7 +46,7 @@ if (isset($_POST['link'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/ffp.css">
+    <link rel="stylesheet" href="css/f3.css">
     
 
     <meta charset="UTF-8">
