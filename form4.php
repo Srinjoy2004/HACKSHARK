@@ -55,7 +55,6 @@ if (isset($_POST['skills1'])) {
         <form action="form4.php" method="POST">
             <div class="form">
                 <div class="details personal">
-                    <!-- <span class="title">Personal Details</span> -->
                     <div class="form second">
                         <div class="Needs">
                             <span class="ques">What skills are you looking in you teammates?</span>

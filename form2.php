@@ -56,14 +56,6 @@ if ($present->num_rows < 1) {
         <form action="form2.php" method="POST">
             <div class="form">
                 <div class="details personal">
-<<<<<<< HEAD
-                    <!-- <span class="title">Personal Details</span> -->
-                    <div class="skills-container">
-                        <div class="skill-input-group">
-                            <div class="form-group">
-                                <label for="skill">Skill:</label>
-                                <input type="text" class="sponge" id="skill" name="skills[]" required>
-=======
                     <span class="title">Personal Details</span>
                     <div class="details personal">
                         <span class="title">Skills</span>
@@ -87,7 +79,6 @@ if ($present->num_rows < 1) {
                                             <textarea id="achievements" name="achievements[]" rows="2"></textarea>
                                         </div>-->
                                 <button type="button" class="remove-skill-btn" onclick="removeSkill(this)">Remove</button>
->>>>>>> 16a5d118fe2c037a481d0d0c58ff826bb95849a9
                             </div>
                             <div class="form-group">
                                 <label for="experience">Years of Experience:</label>
