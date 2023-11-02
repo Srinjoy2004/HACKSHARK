@@ -38,11 +38,12 @@ if ($present->num_rows < 1) {
     header("location: form3.php");
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+  
 <head>
-    <link rel="stylesheet" href="css/f2.css">
+    <link rel="stylesheet" href="f2.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,34 +52,18 @@ if ($present->num_rows < 1) {
 </head>
 
 <body>
-     <div class="container">
+    
+    <div class="container">
         <header>COMPLETE YOUR PROFILE</header>
         <form action="form2.php" method="POST">
             <div class="form">
                 <div class="details personal">
-                    <span class="title">Personal Details</span>
-                    <div class="details personal">
-                        <span class="title">Skills</span>
-
-                        <div class="skills-container">
-                            <div class="skill-input-group">
-                                <div class="form-group">
-                                    <label for="skill">Skill:</label>
-                                    <input type="text" id="skill" name="skills[]" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="workLink">Link to Your Work:</label>
-                                    <input class="sponge" type="url" id="workLink" name="workLinks[]" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="experience">Years of Experience:</label>
-                                    <input class="sponge" type="number" id="experience" name="experiences[]" required>
-                                </div>
-                                <!-- <div class="form-group">
-                                            <label for="achievements">Achievements:</label>
-                                            <textarea id="achievements" name="achievements[]" rows="2"></textarea>
-                                        </div>-->
-                                <button type="button" class="remove-skill-btn" onclick="removeSkill(this)">Remove</button>
+                    <!-- <span class="title">Personal Details</span> -->
+                    <div class="skills-container">
+                        <div class="skill-input-group">
+                            <div class="form-group">
+                                <label for="skill">Skill:</label>
+                                <input type="text" class="sponge" id="skill" name="skills[]" required>
                             </div>
                             <div class="form-group">
                                 <label for="experience">Years of Experience:</label>
@@ -88,7 +73,7 @@ if ($present->num_rows < 1) {
                                 <label for="workLink">Link to Your Work:</label>
                                 <input class="sponge" type="url" id="workLink" name="workLinks[]" required>
                             </div>
-                            <button type="button" class="remove-skill-btn" onclick="removeSkill(this)">Remove</button>
+                            <!-- <button type="button" class="remove-skill-btn" onclick="removeSkill(this)">Remove</button> -->
                         </div>
                     </div>
                     <button type="button" class="add-skill-btn" onclick="addSkill()">Add Skill</button>
@@ -97,47 +82,87 @@ if ($present->num_rows < 1) {
             </div>
         </form>
     </div>
+    
+    
     <script>
         function addSkill() {
-            const skillsContainer = document.querySelector('.skills-container');
-            const skillInputGroup = skillsContainer.querySelector('.skill-input-group');
-            const clonedInputGroup = skillInputGroup.cloneNode(true);
+   const skillsContainer = document.querySelector('.skills-container');
+   const skillInputGroup = document.createElement('div');
+   skillInputGroup.classList.add('skill-input-group');
 
-            // Clear input values
-            clonedInputGroup.querySelectorAll('input[type="text"], input[type="url"], input[type="number"], textarea').forEach(input => {
-                input.value = '';
-            });
+    
+   const skillInput = document.createElement('input');
+   skillInput.type = 'text';
+   skillInput.classList.add('sponge');
+   skillInput.name = 'skills[]';
+   skillInput.required = true;
+   skillInput.style.width = '100%';  
 
-            // Append the cloned skill input group
-            skillsContainer.appendChild(clonedInputGroup);
-        }
+   const experienceInput = document.createElement('input');
+   experienceInput.type = 'number';
+   experienceInput.classList.add('sponge');
+   experienceInput.name = 'experiences[]';
+   experienceInput.required = true;
+   experienceInput.style.width = '100%';  
 
-        function removeSkill(button) {
-            const skillsContainer = document.querySelector('.skills-container');
-            const skillInputGroup = button.parentElement;
-            skillsContainer.removeChild(skillInputGroup);
-        }
+   const workLinkInput = document.createElement('input');
+   workLinkInput.type = 'url';
+   workLinkInput.classList.add('sponge');
+   workLinkInput.name = 'workLinks[]';
+   workLinkInput.required = true;
+   workLinkInput.style.width = '100%';  
 
-        function addSkil() {
-            const skillsContain = document.querySelector('.skillsncontainer');
-            const skillInput = skillsContain.querySelector('.skillinputngroup');
-            const clonedInput = skillInput.cloneNode(true);
+   // Create headings for each field
+   const skillLabel = document.createElement('label');
+   skillLabel.textContent = 'Skill:';
+   skillLabel.style.display = 'block';  
+   skillLabel.style.marginBottom = '10px'; 
+   
 
-            // Clear input values
-            clonedInput.querySelectorAll('input[type="text"], input[type="url"], input[type="number"], textarea').forEach(input => {
-                input.value = '';
-            });
+   const experienceLabel = document.createElement('label');
+   experienceLabel.textContent = 'Years of Experience:';
+   experienceLabel.style.display = 'block';  
+   experienceLabel.style.marginBottom = '10px'; 
+   
 
-            // Append the cloned skill input group
-            skillsContain.appendChild(clonedInput);
-        }
+   const workLinkLabel = document.createElement('label');
+   workLinkLabel.textContent = 'Link to Your Work:';
+   workLinkLabel.style.display = 'block';  
+   workLinkLabel.style.marginBottom = '10px'; 
+   
 
-        function removeSkil(button) {
-            const skillsContain = document.querySelector('.skillsncontainer');
-            const skillInput = button.parentElement;
-            skillsContain.removeChild(skillInput);
-        }
-    </script>
+   // Create a "Remove Skill" button
+   const removeButton = document.createElement('button');
+   removeButton.type = 'button';
+   removeButton.classList.add('remove-skill-btn');
+   removeButton.textContent = 'Remove';
+   removeButton.addEventListener('click', function () {
+       skillsContainer.removeChild(skillInputGroup);
+   });
+
+   // Append headings and input fields to the skill input group
+   skillInputGroup.appendChild(skillLabel);
+   skillInputGroup.appendChild(skillInput);
+   skillInputGroup.appendChild(experienceLabel);
+   skillInputGroup.appendChild(experienceInput);
+   skillInputGroup.appendChild(workLinkLabel);
+   skillInputGroup.appendChild(workLinkInput);
+   skillInputGroup.appendChild(removeButton);
+
+   
+   skillLabel.style.display = 'block';
+   experienceLabel.style.display = 'block';
+   workLinkLabel.style.display = 'block';
+
+   skillLabel.style.marginBottom = '10px';
+   experienceLabel.style.marginBottom = '10px';
+   workLinkLabel.style.marginBottom = '10px';
+
+   // Append the skill input group to the skills container
+   skillsContainer.appendChild(skillInputGroup);
+}
+
+   </script>
 </body>
 
 </html>
