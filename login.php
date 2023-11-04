@@ -69,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" name="password" placeholder="Password*" required>
+                        <img src="eye-close.png" class ="eye-icon" id="eyeicon"alt="">
                     </div>
                     <pre>    <a href="forget_password.php">Forget Password</a> </pre>
                 </div>
@@ -82,6 +83,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             // Redirect to index.html
                             window.location.href = "signup.php";
                         };
+                        let eyeicon =document.getElementById("eyeicon");
+        let password=document.getElementById("password");
+
+        eyeicon.onclick =function()
+        {
+            if(password.type=="password")
+            {
+                password.type= "text";
+                eyeicon.src="eye-open.png";
+            }
+            else
+            {
+                password.type= "password";
+                eyeicon.src=" eye-close.png";
+
+            }
+        }
+    
                     </script>
                 </div>
 
