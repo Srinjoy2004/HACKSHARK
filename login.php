@@ -83,24 +83,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             // Redirect to index.html
                             window.location.href = "signup.php";
                         };
-                        let eyeicon =document.getElementById("eyeicon");
-        let password=document.getElementById("password");
+                        let eyeicon = document.getElementById("eyeicon");
+let passwordInput = document.getElementsByName("password")[0];
 
-        eyeicon.onclick =function()
-        {
-            if(password.type=="password")
-            {
-                password.type= "text";
-                eyeicon.src="eye-open.png";
-            }
-            else
-            {
-                password.type= "password";
-                eyeicon.src=" eye-close.png";
+eyeicon.onclick = function () {
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeicon.src = "eye-open.png";
+    } else {
+        passwordInput.type = "password";
+        eyeicon.src = "eye-close.png";
+    }
+}
 
-            }
-        }
-    
                     </script>
                 </div>
 
