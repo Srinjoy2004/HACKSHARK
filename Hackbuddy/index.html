@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackBuddy</title>
+    <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="home.css">
+     <link rel="stylesheet" href=" card\stylecard.css.css">
+</head>
+<body>
+
+<div class="navbar"  id="myNavbar">
+    <a href="#" class="active">HackBuddy</a>
+    <a href="index.html">Home</a>
+    <a href="#">Recommendations</a>
+    <a href="#" onclick="openConnectionsOverlay()">Connections</a>
+    <a href="#" onclick="comingsoon()">Hackathons</a>
+    <a href="C:\Users\User\Desktop\X\htdocs\HACKSHARK\profile.php">Profile</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+    </a>
+</div>
+
+<!-- Home Section -->
+<section class="home-section">
+    <div class="text-container">
+        <h1>Welcome to HackBuddy!</h1>
+         
+            <p>Empowering developers to connect, collaborate, and find the perfect team for hackathons.</p>
+    </div>
+    <div class="image-container">
+        <img src="IMG-20231205-WA0018-removebg-preview.png" alt="HackBuddy Image">
+    </div>
+</section>
+<!-- Recommendations -->
+<section class="cards-section">
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="the-front">
+<div class="picture">
+    <img src="card\women6.jpg">
+    <div class="overlay">
+       
+        <p>@bae_suzy</p>
+    </div>
+ </div>
+</div>
+
+<!--<div class="the-back">
+    <h3>ABOUT ME</h3>
+    <P>Passionate frontend developer with a knack for transforming ideas into visually appealing, user-friendly interfaces. </P>
+</div>-->
+
+    <div class="cardbk">
+        <div class="the-back">
+            <h3>ABOUT ME</h3>
+            <P>Passionate frontend developer with a knack for transforming ideas into visually appealing, user-friendly interfaces. </P>
+           <div class="full-skill-container">
+            <div class="skills-container">
+                <a href="#" class="skill-button">HTML</a>
+                <a href="#" class="skill-button">CSS</a></div>
+            <div class="skills-container2">
+                <a href="#" class="skill-button">JavaScript</a>
+                <a href="#" class="skill-button">Python</a></div>
+                <!-- Add more skills as needed -->
+            </div>
+            <div class="symbol-container">
+                <div class="accept-symbol">
+                    
+                </div>
+                <div class="skip-symbol"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+ </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+    
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        
+    </div>
+</section>
+
+<!-- Connections -->
+<div id="connectionsOverlay" class="overlay">
+    <div class="overlay-content">
+        
+<div class="close-btn" onclick="closeConnectionsOverlay()">&times;</div>
+
+        
+        <h2>Your Connections</h2>
+        <div class="friend">
+             <a href=""> <img src="card\women2.jpg" alt="Friend 1's profile picture"></a>
+            <span>Friend 1</span>
+        </div>
+        <div class="friend">
+            <img src="card\women2.jpg" alt="Friend 2's profile picture">
+            <span>Friend 2</span>
+        </div>
+        <div class="friend">
+            <img src="card\women2.jpg" alt="Friend 2's profile picture">
+            <span>Friend 2</span>
+        </div>
+        <div class="friend">
+            <img src="card\women2.jpg" alt="Friend 2's profile picture">
+            <span>Friend 2</span>
+        </div>
+        <div class="friend">
+            <img src="card\women2.jpg" alt="Friend 2's profile picture">
+            <span>Friend 2</span>
+        </div>
+         
+        
+        
+        <!-- Add more friend divs as needed -->
+    </div>
+</div>
+ 
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {display: none;}
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+/* Connections Design */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%; 
+    max-height: 35%;
+    overflow: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555; /* Adjust the color as needed */
+}
+
+
+.friend {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.friend img {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend span{
+    flex-grow: 1;
+}
+
+/* Cards styling */
+
+.cards-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.card{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    
+}
+.the-front{
+    border-radius: 20px;
+}
+.card .picture{
+    position: absolute;
+    overflow: hidden;
+  
+}
+
+
+.card .picture::before{
+    content: '';
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #1064a6 50%, transparent);
+    transition: 0.5s;
+z-index: 1;
+}
+.card:hover .picture::before{
+    bottom: 0px;
+}
+
+.card .picture img{
+    width: 100% ;
+    height: 60vh;
+    transition: 0.5s;
+}
+.card:hover .picture img
+{
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+/*.card.details h3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+
+}*/
+
+/*.card.details h3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+    max-width: 180px;
+}
+.card:hover .details h3{
+    bottom: 40px;
+}
+.card.details.logo{
+    max-width: 180px;
+}
+.card.details h3{
+    font-size: 20px;
+    color: #052238;
+}*/
+
+.the-front h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    bottom: 6;
+    margin: 20%;
+}
+.overlay{
+top: 82%;
+left: 50%;
+
+}
+.overlay p {
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+.card .overlay {
+    position: absolute;
+    top: 92%;
+    bottom: 1;
+    width: 100%;
+    background: linear-gradient(0deg, #1064a6 50%, transparent);
+    transition: 0.5s;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+}
+
+/* .card:hover .overlay {
+    top: -100px;
+} */
+.card .picture img{
+    transition: transform 0.5s;
+}
+ 
+
+
+
+@keyframes flipCard {
+    from {
+        transform: perspective(600px) rotateY(0deg);
+    }
+    to {
+        transform: perspective(600px) rotateY(180deg);
+    }
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    animation: flipCard 5s ease;
+    transform:  rotateY(180deg);
+}
+
+.the-front,
+.cardbk {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.cardbk{
+    transform: rotateY(180deg);
+}
+
+.picture {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.cardbk{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    background: linear-gradient(#eeeb9b, #c8bd4b, #514c15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+}
+.the-back h3{
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+}
+.the-back p{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: small;
+}
+.skills-container {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 20%;
+    
+}
+.full-skills-container{
+    display: flex;
+    text-align: center;
+}
+.skills-container{
+    left: 5%;
+}
+
+.skill-button {
+    left: 50%;
+    text-align: center;
+    display: inline-block;
+    padding: 2px 1px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: 2px solid #2980b9;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.skill-button:hover {
+    background-color: #2980b9;
+}
+
+/*symbol container-->*/
+.symbol-container {
+    text-align: center;
+    margin-top: 20%;
+    
+}
+
+.accept-symbol::before {
+    content: "\2713";
+    font-size: 40px;
+    color: #27ae60;
+    margin-bottom: 10%;
+}
+
+.skip-symbol::before {
+    content: "\27f6"; /* Unicode character for a right arrow */
+    font-size: 40px;
+    color: #e74c3c; /* Red color */
+    margin-top: 5%;
+    margin-bottom: 30%;
+}

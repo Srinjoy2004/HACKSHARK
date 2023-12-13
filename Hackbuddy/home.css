@@ -1,0 +1,42 @@
+.home-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+  
+}
+
+.text-container {
+    max-width: 600px;
+}
+
+.text-container h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-container p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter:drop-shadow( 0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .home-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .text-container {
+        margin-bottom: 20px;
+    }
+}

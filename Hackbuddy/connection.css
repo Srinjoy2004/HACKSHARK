@@ -1,0 +1,25 @@
+  /* Add styles for the Connections Section */
+.connections-section {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Flex container styles */
+.connections-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between connections */
+}
+
+/* Style for each connection item */
+.connection {
+    text-align: center;
+}
+
+/* Style for circular profile image */
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}

@@ -6,7 +6,7 @@ $details = "SELECT * FROM `team_req` WHERE `user_id` = $userid";
 $present = mysqli_query($conn, $details);
 if ($present->num_rows < 1) {
     if(isset($_SESSION['form3'])){
-        echo  "<script>alert('Please complete your profile page');</script>";
+        // echo  "<script>alert('Please complete your profile page');</script>";
         }
 if (isset($_POST['skills1'])) {
     // $userid = 1;
@@ -30,12 +30,12 @@ if (isset($_POST['skills1'])) {
     $insertdata = mysqli_query($conn, $finalQuery);
 
     if (!empty($insertdata)) {
-        header("location: home.php");
+        header("location:  Hackbuddy\index.html");
 
     }
 }
 }else{
-    header("location: home.php");
+    header("location:  Hackbuddy\index.html");
 }
 ?><!DOCTYPE html>
 <html lang="en">

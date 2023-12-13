@@ -1,0 +1,113 @@
+ 
+    /* Card Styles */
+
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.card .the-front,
+.card .the-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .the-back {
+    transform: rotateY(180deg);
+}
+
+.picture {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card:hover .picture::before {
+    bottom: 0px;
+}
+
+.card:hover .picture img {
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+.cardbk {
+    transform: rotateY(180deg);
+}
+
+.cardbk h3,
+.cardbk p {
+    text-align: center;
+}
+
+.full-skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.skills-container,
+.skills-container2 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.skill-button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.skill-button:hover {
+    background-color: #45a049;
+}
+
+.symbol-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.accept-symbol::before {
+    content: "\2713";
+    font-size: 40px;
+    color: #27ae60;
+}
+
+.skip-symbol::before {
+    content: "\27f6";
+    font-size: 40px;
+    color: #e74c3c;
+}
