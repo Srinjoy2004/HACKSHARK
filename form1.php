@@ -6,7 +6,7 @@ $details = "SELECT * FROM `form1` WHERE `userid` = $userid";
 $present = $conn->query($details);
 if ($present->num_rows < 1) {
 
-    echo  "<script>alert('Please complete your profile page');</script>";
+    // echo  "<script>alert('Please complete your profile page');</script>";
     $username = $_SESSION['username'];
     // $res = "";
     if (isset($_POST['name'])) {
@@ -61,8 +61,7 @@ if ($present->num_rows < 1) {
             <div class="row">
                 <div class="column">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username">
-                    <?php print($username) ?> 
+                    <input type="text" id="username" name="username" value="<?=$username?>" readonly>
 
                 </div>
                 <div class="column">

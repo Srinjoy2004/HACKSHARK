@@ -7,9 +7,9 @@ $present = mysqli_query($conn, $details);
 if ($present->num_rows < 1) {
 
 if (isset($_POST['link'])) {
-    if(isset($_SESSION['form2'])){
-    echo  "<script>alert('Please complete your profile page');</script>";
-    }
+    // if(isset($_SESSION['form2'])){
+    // echo  "<script>alert('Please complete your profile page');</script>";
+    // }
 
     // Check for connection success
     if (!$conn) {

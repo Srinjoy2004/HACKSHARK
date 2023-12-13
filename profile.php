@@ -1,12 +1,31 @@
 <?PHP
     include 'connection.php';
     $userid = $_SESSION['id'];
+
     $details = "SELECT * FROM `form1` WHERE `userid` = '$userid'";
+    $achievement_details = "SELECT * FROM `achievements` WHERE `user_id` = '$userid'";
+    $userskills_details = "SELECT * FROM `user_skills` WHERE `user_id` = '$userid'";
+    $team_details = "SELECT * FROM `team_req` WHERE `user_id` = '$userid'";
+    
     $result = $conn->query($details);
+    $achievement_result = $conn->query($achievement_details);
+    $userskills_result = $conn->query($userskills_details);
+    $team_result = $conn->query($team_details);
+
     $rowUser = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $achievement_rowUser = mysqli_fetch_array($achievement_result, MYSQLI_ASSOC);
+    
+    
+    
     $git = $rowUser['github'];
+    $name = $rowUser['name'];
+    $bio = $rowUser['about'];
+    
+    $achievements = $achievement_rowUser['link'];
+    
+    $name = $rowUser['name'];
 ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="https://kit.fontawesome.com/6e9db139fc.js" crossorigin="anonymous"></script>
@@ -25,7 +44,7 @@
 
         
             <div class="profile-info">
-                <h1>Your Name</h1>
+                <h1><?php echo $name ?></h1>
                 <!-- <p>Headline / Occupation</p>
                 <p>Location</p> -->
             </div>
@@ -35,7 +54,7 @@
     <section id="about">
         <div class="about-me">
             <h2>Bio</h2>
-            <p>Your summary or description goes here.</p>
+            <p><?php echo $bio ?></p>
         </div>
     </section>
     <!-- <section id="experience">
@@ -54,8 +73,14 @@
         <div class="skills">
             <h2>Skills</h2>
             <ul>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
+                
+                <?php
+                    while ($userskills_rowUser = mysqli_fetch_array($userskills_result, MYSQLI_ASSOC)) {
+                        echo "<li><a href=".$userskills_rowUser['link'].">" . $userskills_rowUser['skill'] .  "(" . $userskills_rowUser['years_work'] .  " years)</li></a>";
+                    }
+                ?>
+                
+                
                 <!-- Add more skills -->
             </ul>
         </div>
@@ -78,14 +103,16 @@
         <div class="skills">
             <h2>Skills You Look for</h2>
             <ul>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <!-- Add more skills -->
+                <?php
+                    while ($team_rowUser = mysqli_fetch_array($team_result, MYSQLI_ASSOC)) {
+                        echo "<li>" . $team_rowUser['skill'] .  "(" . $team_rowUser['exp_year'] .  " years)</li>";
+                    }
+                ?>
             </ul>
         </div>
     </section>
     <div class="icons">
-        <a href="">
+        <a href="<?php echo $achievements ?>">
             <i class="fa-solid fa-award fa-2xl" style="color:  #f9b17a; "></i>
         </a>
         <a href="<?php echo $git ?>">

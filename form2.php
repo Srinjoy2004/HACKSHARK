@@ -5,9 +5,9 @@ $userid = $_SESSION['id'];
 $details = "SELECT * FROM `user_skills` WHERE `user_id` = $userid";
 $present = mysqli_query($conn, $details);
 if ($present->num_rows < 1) {
-    if (isset($_SESSION['form1'])) {
-        echo  "<script>alert('Please complete your profile page');</script>";
-    }
+    // if (isset($_SESSION['form1'])) {
+    //     echo  "<script>alert('Please complete your profile page');</script>";
+    // }
     if (isset($_POST['skills'])) {
         // $userid = 1;
         $count = count($_POST["skills"]);
@@ -43,7 +43,7 @@ if ($present->num_rows < 1) {
  
   
 <head>
-    <link rel="stylesheet" href="f2.css">
+    <link rel="stylesheet" href="css/f2.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

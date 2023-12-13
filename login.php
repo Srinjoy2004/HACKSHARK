@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Authentication failed, show an error message.
-        echo '<script>alert("Invalid email or password. Please try again.");</script>';
+        echo "Invalid email or password. Please try again.";
         //   header("Location: pfp/profile.html");// Redirect to the login page
     }
 
